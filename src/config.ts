@@ -18,6 +18,9 @@ export const config = {
     user: required("DB_USER"),
     password: process.env.DB_PASSWORD ?? "",
     database: process.env.DB_NAME ?? "billpro",
+    ssl: {
+      rejectUnauthorized: false, // Aiven Cloud MySQL కి కనెక్ట్ అవ్వడానికి ఇది కచ్చితంగా ఉండాలి
+    },
   },
   jwtSecret,
   jwtExpires: process.env.JWT_EXPIRES ?? "12h",
