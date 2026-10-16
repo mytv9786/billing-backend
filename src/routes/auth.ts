@@ -132,4 +132,13 @@ router.post(
   }),
 );
 
+// testing for hash password
+router.post(
+  "/make-hash",
+  asyncHandler(async (req, res) => {
+    const { password } = req.body;
+    const generatedHash = await bcrypt.hash(password, 10);
+    res.json({ hash: generatedHash });
+  }),
+);
 export default router;
