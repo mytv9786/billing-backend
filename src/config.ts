@@ -24,7 +24,9 @@ export const config = {
   },
   jwtSecret,
   jwtExpires: process.env.JWT_EXPIRES ?? "12h",
-  corsOrigins: (process.env.CORS_ORIGINS ?? "http://localhost:5173")
+  corsOrigins: (
+    process.env.CORS_ORIGINS ?? "https://billing-dashboard-seven.vercel.app"
+  )
     .split(",")
     .map((s) => s.trim()),
   timezone: process.env.APP_TIMEZONE ?? "Asia/Kolkata",
